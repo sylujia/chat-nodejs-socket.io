@@ -1,11 +1,10 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 // var http = require('http').Server(app);
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
-app.get('/', function (req, res) {
-    res.send('<h1>Welcome Realtime Server</h1>');
-});
+app.use("/",express.static(__dirname + '/chat'));
 
 //在线用户
 var onlineUsers = {};
