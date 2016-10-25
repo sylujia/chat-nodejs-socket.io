@@ -1,0 +1,199 @@
+html, body {
+    margin: 0;
+    background-color: #efefef;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    width: 500px;
+    height: 600px;
+    padding: 5px;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+
+.banner {
+    width: 100%;
+    height: 70px;
+}
+
+.banner span {
+    display: block; /*内联对象需加*/
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis;
+
+}
+
+#message {
+    height: 400px;
+    padding: 2px;
+    overflow: auto;
+    background-color: #ffffff;
+}
+#message img {
+    max-width: 90%;
+}
+
+.msg-system{
+    text-align: center;
+    color: #ddd;
+    font-size: .8em;
+    width: 470px;
+    position: relative;
+}
+
+
+.controls {
+    height: 100px;
+    margin: 5px 0px;
+    position: relative;
+}
+
+.button-group {
+    height: 30px;
+}
+
+.imageLable {
+    position: relative;
+}
+
+#sendImage {
+    position: absolute;
+    width: 52px;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#messageInput {
+    width: 440px;
+    max-width: 440px;
+    height: 70px;
+    max-height: 70px;
+    float: left;
+}
+
+#sendBtn {
+    width: 45px;
+    height: 70px;
+    float: right;
+}
+
+.user {
+    width: 400px;
+    border-radius: 2px;
+}
+
+section {
+    padding: 10px;
+    clear: both;
+    margin-bottom: 0;
+    border-top: 1px;
+}
+
+section.user {
+    float: right;
+    text-align: right;
+}
+
+section.user > div {
+    max-width: 300px;
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    margin: 0 15px 0 10px;
+    text-align: left;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: inset 0 0 1px #007aff;
+    background-color: #007aff;
+    vertical-align: top;
+    word-break: break-all;
+}
+
+section.user > div:before {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 4px;
+    width: 0;
+    height: 0;
+    border-top: solid transparent;
+    border-left: 7px solid #007aff;
+    border-bottom: 4px solid transparent;
+}
+
+.user > span {
+
+    font-weight: normal;
+    font-size: 14px;
+    color: #f60;
+    max-width: 80px;
+    height: 36px;
+    overflow: hidden;
+    float: right;
+}
+
+section.service {
+    float: left;
+}
+
+section.service > div {
+    max-width: 300px;
+    display: inline-block;
+    position: relative;
+    padding: 8px;
+    margin: 0 15px 0 10px;
+    border-radius: 10px;
+    background-color: #ddd;
+    box-shadow: inset 0 0 1px #ddd;
+    vertical-align: top;
+
+}
+
+section.service > div:before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 4px;
+    width: 0;
+    height: 0;
+    border-top: solid transparent;
+    border-right: 7px solid #ddd;
+    border-bottom: 4px solid transparent;
+}
+
+.service > span {
+    max-width: 80px;
+    height: 36px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #999;
+    overflow: hidden;
+    float: left;
+}
+
+
+#emojiWrapper {
+    display: none;
+    width: 500px;
+    bottom: 105px;
+    position: absolute;
+    background-color: #aaa;
+    box-shadow: 0 0 10px #555;
+}
+#emojiWrapper img {
+    margin: 2px;
+    padding: 2px;
+    width: 25px;
+    height: 25px;
+}
+#emojiWrapper img:hover {
+    background-color: blue;
+}
+
+.emoji{
+    display: inline;
+}

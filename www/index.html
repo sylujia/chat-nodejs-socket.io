@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyChat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/main.css" >
+
+</head>
+<body>
+
+<div id="loginbox">
+    <div style="width:260px;margin:200px auto;">
+        请先输入你在聊天室的昵称
+        <br/>
+        <br/>
+        <input type="text" style="width:180px;" autofocus="autofocus" placeholder="请输入用户名(最多四个字符)" id="nickname" name="nickname"/>
+        <input type="button" style="width:50px;" value="提交" onclick="CHAT.nicknameSubmit();"/>
+    </div>
+</div>
+
+<div id="chatbox" class="wrapper" style="display:none;">
+    <div class="banner">
+        <h3>嗨聊:<span style="display:inline" id="showusername">(user1)</span></h3>
+        <span id="status">两个用户在个</span>
+    </div>
+    <div id="message">
+    </div>
+
+    <div class="controls">
+        <div class="button-group">
+            <input id="emoji" type="button" onclick="CHAT.showEmoji();" value="表情"/>
+            <label for="sendImage" class="imageLable">
+                <input type="button" value="图片">
+                <input id="sendImage" onchange="CHAT.sendImage();" type="file" value="图片">
+            </label>
+            <input id="clearBtn" type="button" onclick="CHAT.clearMsg();" value="清空">
+        </div>
+        <textarea id="messageInput" autofocus="autofocus" placeholder="Enter to send"></textarea>
+        <input id="sendBtn" type="button" onclick="CHAT.submitMsg();" value="发送">
+        <div id="emojiWrapper">
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="./js/client.js"></script>
+
+</body>
+</html>
