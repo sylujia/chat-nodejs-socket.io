@@ -137,6 +137,7 @@
                 }
                 var msgobj = d.getElementById('message');
                 msgobj.appendChild(section);
+                msgobj.scrollTop = msgobj.scrollHeight;
             });
 
             this.socket.on('img',function (user , imgData) {
