@@ -1,7 +1,16 @@
 {
-  "name": "HiQQ",
+  "name": "node-hichat",
   "version": "1.0.0",
+  "description": "A chat software based on socket.io",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sylujia/chat-nodejs-socket.io.git"
+  },
+  "author": "sylujia",
   "dependencies": {
     "express": "latest",
     "socket.io": "latest"
