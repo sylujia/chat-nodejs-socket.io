@@ -18,7 +18,10 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
-http.listen(process.env.PORT || 3000);
+var port = process.env.PORT || 3000;
+http.listen(port,function () {
+    console.log("Server started listen port:"+port);
+});
 
 io.sockets.on('connection', function (socket) {
     console.log('一位新用户连接')

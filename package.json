@@ -1,8 +1,13 @@
 {
   "name": "HiQQ",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "main": "server.js",
   "dependencies": {
     "express": "latest",
     "socket.io": "latest"
+  },
+  "engines": {
+    "node": "6.3.1",
+    "npm": "3.10.3"
   }
 }
