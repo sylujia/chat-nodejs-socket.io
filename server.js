@@ -18,6 +18,8 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
+http.listen(process.env.PORT || 3000);
+
 io.sockets.on('connection', function (socket) {
     console.log('一位新用户连接')
     socket.on('login', function (obj) {
@@ -60,10 +62,10 @@ io.sockets.on('connection', function (socket) {
     });
 });
 
-
-http.listen(3000, function () {
-    console.log("Server started");
-});
+//
+// http.listen(3000, function () {
+//     console.log("Server started");
+// });
 
 
 
