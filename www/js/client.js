@@ -169,24 +169,27 @@
         //登录提交用户昵称
         nicknameSubmit: function () {
             var nickname = d.getElementById('nickname').value;
-            if (nickname != "" && nickname.length < 5) {
+            if (nickname != "" && nickname.length < 7) {
                 d.getElementById('nickname').value = "";
                 d.getElementById('loginbox').style.display = 'none';
                 d.getElementById('chatbox').style.display = 'block';
                 this.init(nickname);
             }
             d.getElementById('nickname').value = "";
-            d.getElementById('nickname').setAttribute("placeholder", "请输入不多于四个字符的昵称");
+            d.getElementById('nickname').setAttribute("placeholder", "请输入不多于六个字符的昵称");
             return false;
         },
 
         //发送消息
         submitMsg: function () {
-            var msg = d.getElementById('messageInput').value;
+            var msg = filterXSS(d.getElementById('messageInput').value);
+
             if (msg != "") {
                 d.getElementById('messageInput').value = "";
 
                 this.socket.emit('message', {userid: this.userid, nickname: this.nickname, content: msg});
+            }else{
+                return;
             }
             return false;
         },
@@ -243,6 +246,7 @@
     d.getElementById('messageInput').onkeydown = function (e) {
         e = e || event;
         if (e.keyCode === 13) {
+            e.preventDefault();//避免回车键换行
             CHAT.submitMsg();
         }
     };
@@ -251,6 +255,7 @@
     d.getElementById('nickname').onkeydown = function (e) {
         e = e || event;
         if (e.keyCode === 13) {
+            e.preventDefault();//避免回车键换行
             CHAT.nicknameSubmit();
         }
     };
